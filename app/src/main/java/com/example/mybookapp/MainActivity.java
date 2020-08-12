@@ -1,5 +1,6 @@
 package com.example.mybookapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -63,5 +66,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         recyclerView.setAdapter(titleAdapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id=item.getItemId();
+        if(id==R.id.menu_share){
+            Toast.makeText(MainActivity.this, "Share Clicked", Toast.LENGTH_SHORT).show();
+        }
+        if(id==R.id.menu_about){
+            Toast.makeText(MainActivity.this, "About Clicked", Toast.LENGTH_SHORT).show();
+        }
+        if(id==R.id.menu_exit){
+           finish();
+        }
+        return onOptionsItemSelected(item);
+
     }
 }
