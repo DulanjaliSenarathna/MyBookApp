@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id=item.getItemId();
+        int id = item.getItemId();
         if(id==R.id.menu_share){
             Toast.makeText(MainActivity.this, "Share Clicked", Toast.LENGTH_SHORT).show();
         }
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "About Clicked", Toast.LENGTH_SHORT).show();
         }
         if(id==R.id.menu_exit){
-           finish();
+            finish();
         }
         return onOptionsItemSelected(item);
 
